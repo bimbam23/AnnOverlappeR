@@ -4,7 +4,7 @@
 #####
 
 
-filter_easy <- function (results.df = final_ge.df, cutoff = 50){
+filter_easy <- function (results.df, cutoff = 50){
   results.df$percent.mean_exon <- as.double(sub(pattern=NaN,replacement=0L,x=results.df$percent.mean_exon))
   results.df$percent.mean_cds <- as.double(sub(pattern=NaN,replacement=0L,x=results.df$percent.mean_cds))
 
@@ -134,7 +134,7 @@ mean_ol <- function(GGRange1, GGRange2){
 }
 
 # optional extra filtering functions
-filter_df <- function (results.df=final_ge.df, cutoff=50){
+filter_df <- function (results.df, cutoff=50){
   results.df$percent.mean_exon <- as.double(sub(pattern=NaN,replacement=0L,x=results.df$percent.mean_exon))
   results.df$percent.mean_cds <- as.double(sub(pattern=NaN,replacement=0L,x=results.df$percent.mean_cds))
   
@@ -198,7 +198,7 @@ filter_df <- function (results.df=final_ge.df, cutoff=50){
   
 }
 
-filter_advanced <- function (results.df = final_ge.df, geneCutoff = 50, SSexonCDSCutoff = 50, highOLCutoff = 80, mediumOLCutoff = 70){
+filter_advanced <- function (results.df, geneCutoff = 50, SSexonCDSCutoff = 50, highOLCutoff = 80, mediumOLCutoff = 70){
   results.df$percent.mean_exon <- as.double(sub(pattern=NaN,replacement=0L,x=results.df$percent.mean_exon))
   results.df$percent.mean_cds <- as.double(sub(pattern=NaN,replacement=0L,x=results.df$percent.mean_cds))
   
