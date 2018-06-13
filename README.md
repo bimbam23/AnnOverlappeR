@@ -7,7 +7,7 @@ This is the AnnOverlappeR a tool to find the best overlaps between NCBI EntrezGe
 
 ### Install
 
-1. Clone the [GitHub repo](https://github.com/bimbam23/annoverlapper), e.g. with `git clone https://github.com/bimbam23/annoverlapper.git`
+1. Clone the [GitHub repo](https://github.com/bimbam23/AnnOverlappeR), e.g. with `git clone https://github.com/bimbam23/AnnOverlappeR.git`
 
 ### Usage
 
