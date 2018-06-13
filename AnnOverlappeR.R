@@ -121,14 +121,9 @@ ens.gtf <- ens_all.gtf
 # clean
 # system(paste0("rm -f ", ens_file))
 
-# check if gtf has c("source","type","gene_id") to subset it ### maybe not necessary ?
 cat("done\n")
 
 # subset gtf
-########################################################################
-# save transkript name fro plotting later and for the NCBI gff as well #
-########################################################################
-
 ens.gtf@elementMetadata <- ens.gtf@elementMetadata[c("type","gene_id", "gene_name", "gene_biotype", "transcript_id", "protein_id")]#, "source", transcript_id" )] ### cutoff
 
 
@@ -230,9 +225,9 @@ save(GG2, file=paste0(species_path, "GG2.RData"))
 
 
 
-#####
-# ncbi VS ensemble
-#####
+###################
+# ncbi VS ensembl #
+###################
 
 cat("STATUS::\t", "Check gene overlapping...")
 
