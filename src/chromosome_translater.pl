@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Title: table_cutter.pl
+# Title: chromosome_translater.pl
 # Author: Jochen Bick
 # Description:
 # Translates chromosome IDs to numbers
@@ -18,13 +18,8 @@ GetOptions ("chr=s" => \$chr, # string
     or die("Error in command line arguments\n");
 
 my %chr_hash;
-#my $comment;
-#open(GFF, "<$gff") or die "Cannot open: $!";
-#open(CHR, "<$chr") or die "Cannot open: $!";
-#open(OUT, ">$out") or die "Cannot open: $!";
 
 my @chrfiles = split(/,/, $chr);
-#print Dumper @chrfiles;
 if($chr){
     foreach my $chrfile (@chrfiles){
 	open(CHR, "<$chrfile") or die "Cannot open: $!";
@@ -37,7 +32,6 @@ if($chr){
 		$chr_hash{$elements[1]} = "chrUn_".$elements[3];
 		next;
 	    }
-	    #$elements[0] =~ s/(\w)\w/$1/; # to change MT to M only
 	    $elements[0] =~ s/MT/M/; # to change MT to M only	 
 	    $chr_hash{$elements[1]} = "chr".$elements[0];
 	}
@@ -86,7 +80,6 @@ if($chr){
 	}
 	my @lines = split(/\t/, $line);
 	if($lines[0] =~ /^[\w\d]{1,2}$/){
-	   # $lines[0] =~ s/(\w)\w/$1/; # to change MT to M only	    
 	    $lines[0] =~ s/^MT$/M/; # to change MT to M only
 	    $lines[0] = "chr".$lines[0];
 	}else{
