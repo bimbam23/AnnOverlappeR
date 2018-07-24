@@ -65,3 +65,8 @@ library(pbmcapply)
 ##### more dependencies
 perl, gzip, wget
 
+##### Galaxy app
+The Galaxy platform is available at https://galaxyproject.org/admin/get-galaxy/.
+All files have to be copied to the listed folders.
+The file content of all xml files in the config folder have to be added to the corresponding xml files. 
+
