@@ -1,0 +1,5 @@
+    <!-- moadb tabular servers -->
+    <table name="tabular_moadb" comment_char="#" allow_duplicate_entries="False">
+        <columns>value, name, url</columns>
+        <file path="tool-data/tabular_moadb.loc" />
+    </table>

@@ -1,0 +1,3 @@
+    <datatype extension="tabular" type="galaxy.datatypes.tabular:Tabular" display_in_upload="true" description="Any data in tab delimited format (tabular)." description_url="https://wiki.galaxyproject.org/Learn/Datatypes#Tabular_.28tab_delimited.29">
+      <display file="moadb/moadb_display_app.xml"/>
+    </datatype>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<display id="moad_tabular" version="1.0.0" name="display at MOAdb" inherit="True">
+    <dynamic_links from_data_table="tabular_moadb" skip_startswith="#" id="value" name="name">
+        <url>${url}?inputlist=${tabular_file.qp}</url>
+        <param type="data" name="tabular_file" url="galaxy_${DATASET_HASH}.tabular" />
+    </dynamic_links>
+</display>

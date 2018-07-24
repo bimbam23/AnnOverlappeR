@@ -1,0 +1,3 @@
+# Table used for listing moadb servers
+#<unique_id>	<display_name>	<url>
+tabular_moadb	View	http://moadb.ethz.ch/index.php
