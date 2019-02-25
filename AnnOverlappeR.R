@@ -197,11 +197,10 @@ system(paste0("rm -f ", species_path, "head.gff"))
 
 cat("STATUS::\t", "Import GFF file...")
 
-ncbi_all.gff <- import.gff(ncbi_file, format="gff3")
+# get genes, preudogenes, exons and CDS
+ncbi.gff  <- ncbi_all.gff[grep(pattern = "gene[0-9]+|id[0-9]+|cds[0-9]+", x = ncbi_all.gff$ID)]
 
-ncbi.gff  <- ncbi_all.gff
-
-ncbi.gff@elementMetadata <- ncbi.gff@elementMetadata[c("type","geneid", "gene", "transcript_id", "protein_id")] ### do not take description or product because its only for mRNAs
+ncbi.gff@elementMetadata <- ncbi.gff@elementMetadata[c("type","geneid", "gene", "transcript_id", "protein_id", "ID")] ### do not take description or product because its only for mRNAs
 
 
 # clean
@@ -209,10 +208,11 @@ ncbi.gff@elementMetadata <- ncbi.gff@elementMetadata[c("type","geneid", "gene", 
 
 cat("done\n")
 
-
-GG1 <- ncbi.gff[ncbi.gff$type %in% "gene", ]
+#  do not loose preudogenes
+GG1 <- ncbi.gff[grep(pattern = "gene[0-9]+", x = ncbi.gff$ID)]
+# GG1 <- ncbi.gff[ncbi.gff$type %in% "gene", ]
 GG1@elementMetadata <- GG1@elementMetadata[c("type","geneid", "gene")] # make it short again
-GG1_all <- ncbi_all.gff[ncbi_all.gff$type %in% "gene", ]
+GG1_all <- ncbi_all.gff[grep(pattern = "gene[0-9]+", x = ncbi_all.gff$ID)]
 GG2 <- ens.gtf[ens.gtf$type %in% "gene", ]
 
 cat(paste0("INFO::\t\t","AnnOverlappeR retrieved: ", length(GG1), " genes from NCBI and ", length(GG2), " genes from Ensembl!\n"))
